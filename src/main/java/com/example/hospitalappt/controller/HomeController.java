@@ -24,12 +24,17 @@ public class HomeController {
     }
 
     @GetMapping("/doctors/{doctorId}")
-    public Optional<Doctor> getDoctor(@PathVariable Long doctorId){
+    public Optional<Doctor> getDoctor(@PathVariable long doctorId){
         return doctorService.getDoctorById(doctorId);
     }
 
     @PostMapping("/doctors")
     public Doctor createDoctor(@RequestBody Doctor doctor){
         return doctorService.createDoctor(doctor);
+    }
+
+    @DeleteMapping("/doctors/{doctorId}")
+    public void deleteDoctor(@PathVariable long doctorId){
+        doctorService.deleteDoctor(doctorId);
     }
 }

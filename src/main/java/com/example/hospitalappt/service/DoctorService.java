@@ -8,9 +8,9 @@ import java.util.Optional;
 public interface DoctorService {
      List<Doctor> getDoctors();
 
-     Optional<Doctor> getDoctorById(Long id);
+     Optional<Doctor> getDoctorById(long id);
 
      Doctor createDoctor(Doctor doctor);
 
-     void deleteDoctor(Long id);
+     void deleteDoctor(long id);
 }

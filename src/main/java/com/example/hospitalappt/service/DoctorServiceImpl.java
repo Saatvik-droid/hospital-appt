@@ -18,7 +18,7 @@ public class DoctorServiceImpl implements DoctorService {
         return doctorDao.findAll();
     }
 
-    public Optional<Doctor> getDoctorById(Long id) {
+    public Optional<Doctor> getDoctorById(long id) {
         return doctorDao.findById(id);
     }
 
@@ -28,7 +28,7 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
-    public void deleteDoctor(Long id) {
+    public void deleteDoctor(long id) {
         doctorDao.deleteById(id);
     }
 }
