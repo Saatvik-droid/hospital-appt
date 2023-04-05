@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DoctorService {
-     List<Doctor> getDoctors();
+    List<Doctor> getDoctors();
 
-     Optional<Doctor> getDoctorById(long id);
+    Optional<Doctor> getDoctorById(Long id);
 
-     Doctor createDoctor(Doctor doctor);
+    Doctor createDoctor(Doctor doctor);
 
-     void deleteDoctor(long id);
+    void deleteDoctor(Long id);
 }

@@ -1,19 +1,17 @@
 package com.example.hospitalappt.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @Column(name = "id", nullable = false)
+    private Long id;
     private String name;
     private String location;
 
-    public Doctor(long id, String name, String location) {
+    public Doctor(Long id, String name, String location) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -23,11 +21,11 @@ public class Doctor {
         super();
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
