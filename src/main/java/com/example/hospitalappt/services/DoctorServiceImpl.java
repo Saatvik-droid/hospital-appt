@@ -1,4 +1,4 @@
-package com.example.hospitalappt.service;
+package com.example.hospitalappt.services;
 
 import com.example.hospitalappt.dao.DoctorDao;
 import com.example.hospitalappt.entities.Doctor;

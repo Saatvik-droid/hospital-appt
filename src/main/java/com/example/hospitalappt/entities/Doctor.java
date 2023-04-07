@@ -8,12 +8,17 @@ public class Doctor {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
-    private String name;
+    @Column(nullable = false)
+    private String firstName;
+    @Column(nullable = false)
+    private String lastName;
+    @Column(nullable = false)
     private String location;
 
-    public Doctor(Long id, String name, String location) {
+    public Doctor(Long id, String firstName, String lastName, String location) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.location = location;
     }
 
@@ -29,12 +34,20 @@ public class Doctor {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getLocation() {
@@ -45,10 +58,8 @@ public class Doctor {
         this.location = location;
     }
 
-
     @Override
     public String toString() {
-        return "Doctor{" + "id=" + id + ", name='" + name + '\'' + ", location='" + location + '\'' + '}';
+        return "Doctor{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", location='" + location + '\'' + '}';
     }
-
 }

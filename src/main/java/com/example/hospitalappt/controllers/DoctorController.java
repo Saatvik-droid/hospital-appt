@@ -1,7 +1,7 @@
-package com.example.hospitalappt.controller;
+package com.example.hospitalappt.controllers;
 
 import com.example.hospitalappt.entities.Doctor;
-import com.example.hospitalappt.service.DoctorService;
+import com.example.hospitalappt.services.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

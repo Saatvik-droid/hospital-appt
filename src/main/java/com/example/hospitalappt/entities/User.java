@@ -2,7 +2,7 @@ package com.example.hospitalappt.entities;
 
 import com.example.hospitalappt.utils.GenderEnum;
 import jakarta.persistence.*;
-
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 public class User {
@@ -10,14 +10,21 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+    @Column(nullable = false)
     private String firstName;
+    @Column(nullable = false)
     private String lastName;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private GenderEnum gender;
 
+    @Column(nullable = false)
     private Integer age;
-    private String phoneNo;
+
+    @Column(nullable = false)
+    @Pattern(regexp = "(^$|[0-9]{10})", message = "Invalid number")
+    private String phoneNumber;
 
     public User(Long id, String firstName, String lastName, GenderEnum gender, Integer age, String phoneNo) {
         this.id = id;
@@ -25,7 +32,7 @@ public class User {
         this.lastName = lastName;
         this.gender = gender;
         this.age = age;
-        this.phoneNo = phoneNo;
+        this.phoneNumber = phoneNo;
     }
 
     public User() {
@@ -73,11 +80,11 @@ public class User {
     }
 
     public String getPhoneNo() {
-        return phoneNo;
+        return phoneNumber;
     }
 
     public void setPhoneNo(String phoneNo) {
-        this.phoneNo = phoneNo;
+        this.phoneNumber = phoneNo;
     }
 }
 
