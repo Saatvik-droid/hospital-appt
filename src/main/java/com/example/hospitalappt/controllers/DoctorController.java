@@ -2,6 +2,7 @@ package com.example.hospitalappt.controllers;
 
 import com.example.hospitalappt.entities.Doctor;
 import com.example.hospitalappt.services.DoctorService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class DoctorController {
 
     @PostMapping("/doctors")
     @ResponseStatus(HttpStatus.CREATED)
-    public Doctor createDoctor(@RequestBody Doctor doctor) {
+    public Doctor createDoctor(@Valid @RequestBody Doctor doctor) {
         return doctorService.createDoctor(doctor);
     }
 
