@@ -1,6 +1,6 @@
 package com.example.hospitalappt.entities;
 
-import com.example.hospitalappt.utils.GenderEnum;
+import com.example.hospitalappt.dto.GenderEnum;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 
@@ -85,6 +85,11 @@ public class User {
 
     public void setPhoneNo(String phoneNo) {
         this.phoneNumber = phoneNo;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", gender=" + gender + ", age=" + age + ", phoneNumber='" + phoneNumber + '\'' + '}';
     }
 }
 

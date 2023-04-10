@@ -1,6 +1,7 @@
 package com.example.hospitalappt.controllers;
 
 import com.example.hospitalappt.entities.Doctor;
+import com.example.hospitalappt.exceptions.notFoundException.DoctorNotFoundException;
 import com.example.hospitalappt.services.DoctorService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class DoctorController {
     }
 
     @GetMapping("/doctors/{doctorId}")
-    public Optional<Doctor> getDoctor(@PathVariable Long doctorId) {
+    public Doctor getDoctor(@PathVariable Long doctorId) throws DoctorNotFoundException {
         return doctorService.getDoctorById(doctorId);
     }
 

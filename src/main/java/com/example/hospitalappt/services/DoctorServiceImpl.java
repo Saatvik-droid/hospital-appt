@@ -2,11 +2,11 @@ package com.example.hospitalappt.services;
 
 import com.example.hospitalappt.dao.DoctorDao;
 import com.example.hospitalappt.entities.Doctor;
+import com.example.hospitalappt.exceptions.notFoundException.DoctorNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class DoctorServiceImpl implements DoctorService {
@@ -15,11 +15,11 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public List<Doctor> getDoctors() {
-        return doctorDao.findAll();
+        return (List<Doctor>) doctorDao.findAll();
     }
 
-    public Optional<Doctor> getDoctorById(Long id) {
-        return doctorDao.findById(id);
+    public Doctor getDoctorById(Long id) throws DoctorNotFoundException{
+        return doctorDao.findById(id).orElseThrow(DoctorNotFoundException::new);
     }
 
     @Override

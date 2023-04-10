@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{userId}")
-    public Optional<User> getUserById(@PathVariable Long userId) throws UserNotFoundException {
+    public User getUserById(@PathVariable Long userId) throws UserNotFoundException {
         return userService.getUserById(userId);
     }
 
@@ -37,6 +37,5 @@ public class UserController {
     public void deleteUser(@PathVariable Long userId) {
         userService.deleteUser(userId);
     }
-
 
 }

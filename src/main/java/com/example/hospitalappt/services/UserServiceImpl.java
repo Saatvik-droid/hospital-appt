@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
@@ -17,12 +16,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getUsers() {
-        return userDao.findAll();
+        return (List<User>) userDao.findAll();
     }
 
     @Override
-    public Optional<User> getUserById(Long id) throws UserNotFoundException {
-        return Optional.ofNullable(userDao.findById(id).orElseThrow(UserNotFoundException::new));
+    public User getUserById(Long id) throws UserNotFoundException {
+        return userDao.findById(id).orElseThrow(UserNotFoundException::new);
     }
 
     @Override

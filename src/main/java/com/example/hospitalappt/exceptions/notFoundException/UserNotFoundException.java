@@ -1,11 +1,13 @@
 package com.example.hospitalappt.exceptions.notFoundException;
 
+import com.example.hospitalappt.entities.User;
+
 public class UserNotFoundException extends NotFoundException {
     public UserNotFoundException() {
-        super("User not found", "User");
+        super(User.class.getSimpleName());
     }
 
     public UserNotFoundException(String message) {
-        super(message, "User");
+        super(message, User.class.getSimpleName());
     }
 }

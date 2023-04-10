@@ -1,14 +1,14 @@
 package com.example.hospitalappt.services;
 
 import com.example.hospitalappt.entities.Doctor;
+import com.example.hospitalappt.exceptions.notFoundException.DoctorNotFoundException;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface DoctorService {
     List<Doctor> getDoctors();
 
-    Optional<Doctor> getDoctorById(Long id);
+    Doctor getDoctorById(Long id) throws DoctorNotFoundException;
 
     Doctor createDoctor(Doctor doctor);
 

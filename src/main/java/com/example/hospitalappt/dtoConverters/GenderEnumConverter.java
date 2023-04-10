@@ -1,5 +1,6 @@
-package com.example.hospitalappt.utils;
+package com.example.hospitalappt.dtoConverters;
 
+import com.example.hospitalappt.dto.GenderEnum;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 

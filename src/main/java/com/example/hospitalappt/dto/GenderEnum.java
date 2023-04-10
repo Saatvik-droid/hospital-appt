@@ -1,4 +1,4 @@
-package com.example.hospitalappt.utils;
+package com.example.hospitalappt.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
